@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <!-- Mở đầu -->
+    <head>
+        <!-- Tên của tab -->
+        <title> My website </title>
+        <link rel = "stylesheet" href = "sheraton.css">
+        <link rel = "stylesheet" href = "sheraton_responsive.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel = "stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel = "stylesheet" href = "./assets/fonts/fontawesome-free-5.12.0/css/all.min.css">
+        <script src = "project_animation.js" async></script>
+        <!-- Hỗ trợ tiếng việt -->
+        <meta charset = "utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <!-- Thân / content -->
+    <body>
+        <div class = "nav_bar-pc">
+            <div class = "navbar_pc-image">
+                <img src = "../portfolio_image/p10.png" style = "width: 80%; height: 60%; margin-top: 30px;">
+                <h2> PORTFOLIO </h2>
+                <h4 style = "font-family: Georgia, 'Times New Roman', Times, serif;"> Since 2022 </h4>
+            </div>
+            <div class = "navbar_pc-info">
+                <div class = "info">
+                    <i class = "fa fa-th-large fa-fw w3-margin-right"></i>
+                    <a href = "#portfolio"> <p> PORTFOLIO </p> </a>
+                </div>
+                <div class = "info">
+                    <i class = "fa fa-user fa-fw w3-margin-right"></i>
+                    <a href = "#about"> <p> ABOUT </p> </a>
+                </div>
+                <div class = "info">
+                    <i class = "fa fa-envelope fa-fw w3-margin-right"></i>
+                    <a href = "#contact"> <p> CONTACT </p> </a>
+                </div>
+                <div class = "info">
+                    <button class = "mode" onclick = "myFunction(1)"> <img src = "darkness.png" style = "width: 80%; height: 80%;"> </button>
+                    <button class = "mode" onclick = "myFunction(2)"> <img src = "brightness.png" style = "width: 80%; height: 80%;"> </button>
+                </div>
+            </div>
+        </div>
+        <div class = "nav_bar-mobile">
+            <div class = "menu_btn">
+                <label for = "nav-mobile-input" class="fa-solid fa-bars" style = "color: white; font-size: 32px; margin-left: 20px; margin-top: 15px;"></label>
+                <input type = "checkbox" hidden name = "" class = "nav_input" id = "nav-mobile-input">
+                <label for = "nav-mobile-input" class="nav_overlay"></label>
+                
+                <div class = "navbar_mobile-options">
+                    <label for = "nav-mobile-input" class = "navbar_mobile-close">
+                        <i class='fas fa-times-circle'></i>
+                    </label>
+                    <ul class = "navbar_mobile-list">
+                        <li>
+                            <a href = "" class = "navbar_mobile-link"> Home </a>
+                        </li>
+                        <li>
+                            <a href = "" class = "navbar_mobile-link"> About </a>
+                        </li>
+                        <li>
+                            <a href = "" class = "navbar_mobile-link"> News </a>
+                        </li>
+                        <li>
+                            <a href = "" class = "navbar_mobile-link"> Contact </a>
+                        </li>
+                        <li>
+                            <button class = "mode" onclick = "myFunction(1)"> <img src = "darkness.png" style = "width: 80%; height: 80%;"> </button>
+                            <button class = "mode" onclick = "myFunction(2)"> <img src = "brightness.png" style = "width: 80%; height: 80%;"> </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="search-box">
+                <input type="text" class="input-search" placeholder="Type to Search...">
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+                
+            </div>
+        </div>
+        
+        
+        <div class = "content">
+            <div class = "video_container">
+                <video autoplay loop id = "myVideo">
+                    <source src = "pexels-sunbeam-photography-6252535.mp4" type = "video/mp4">
+                </video>
+            </div>
+            <div class = "clock">
+                <p id = "clock"></p>
+            </div>
+            
+        </div>
+        
+    </body>
+    <script>
+        const myTime = setInterval(myClock, 1000);
+
+        function myFunction(n) {
+            
+            if (n == 1) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }
+        }
+
+        function myClock () {
+            const date = new Date();
+            document.getElementById("clock").innerHTML = date.toLocaleTimeString();
+        }
+    </script>
+</html>
